@@ -111,7 +111,7 @@ const routes = [
   { path: 'admin/village', name: 'Volunteer', element: VillageData},
   { path: '/admin/analyse', name: 'Admin', element: Analyse},
   { path: '/map', name: 'Map', element: MapComponent },
-
+  { path: '/admin/analyse', name: 'Volunteer', element: LineChart},
 
 
 ]
