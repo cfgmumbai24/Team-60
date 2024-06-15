@@ -1,6 +1,4 @@
-import Beneficiary from "../models/beneficiary";
-import Volunteer from "../models/volunteer";
-import Goat from "../models/goat";
+import Goat from "../models/goats.js";
 
 const getGoats = async (req, res) => {
     const { _id } = req.params;

@@ -1,10 +1,8 @@
-import Beneficiary from "../models/beneficiary.js";
-import Goat from "../models/goat.js";
 import Volunteer from "../models/volunteer.js";
 
 const addvolunteer = async (req, res) => {
-    const { name, uid, goats, villages, free } = req.body;
-    const newVolunteer = new Volunteer({ name, uid, goats, villages, free });
+    const { name, free, password } = req.body;
+    const newVolunteer = new Volunteer({ name, free, password });
     try {
         await newVolunteer.save();
         res.status(201).json(newVolunteer);
