@@ -47,7 +47,7 @@ const getVolunteer = async (req, res) => {
 
 const updateVolunteer = async (req, res) => {
     const { id } = req.params;
-    const { name, free } = req.body;
+    const { name, village, } = req.body;
     if (!free) {
         res.status(409).json({ message: "Volunteer is not free" });
     }

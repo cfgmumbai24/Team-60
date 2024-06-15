@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import './map.css';
+// import './map.css';
 import Button from '@mui/material/Button';
 import { green } from '@mui/material/colors';
 import { useNavigate } from 'react-router-dom';

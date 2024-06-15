@@ -10,6 +10,10 @@ const volunteerSchema = new Schema({
         type: String,
         required: true
     },
+    volunteers: {
+        type: [Schema.Types.ObjectId],
+        ref: 'Volunteer'
+    },
     goats: {
         type: [Schema.Types.ObjectId],
         ref: 'Goat'
