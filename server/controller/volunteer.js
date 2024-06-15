@@ -3,14 +3,11 @@ import Beneficiary from "../models/beneficiary.js";
 
 const getBeneficiaries = async (req, res) => {
     const { id } = req.params;
-    const volunteer = Volunteer.findById(id);
-    if (volunteer.password !== password) {
-        res.status(401).json({ message: "Unauthorized Access" });
-    }
     else {
-        const beneficiaries = Beneficiary.find({ volunteers: id });
-        res.status(200).json(beneficiaries);
-    }
+    const volunteer = Volunteer.findById(id);
+    const beneficiaries = Beneficiary.find({ volunteers: id });
+    res.status(200).json(beneficiaries);
+}
 }
 
 const addBeneficiary = async (req, res) => {
