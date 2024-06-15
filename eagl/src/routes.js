@@ -110,15 +110,9 @@ const routes = [
   { path:'/admin/volunteer', name: 'Volunteer', element: Volunteer },
   { path: 'admin/volunteer/add', name: 'Volunteer', element: AddVolunteer },
   { path: 'admin/village', name: 'Volunteer', element: VillageData},
-<<<<<<< Updated upstream
   { path: '/admin/analyse', name: 'Admin', element: Analyse},
   { path: '/map', name: 'Map', element: MapComponent },
   { path: '/admin/analyse', name: 'Volunteer', element: LineChart},
-=======
-  { path: '/admin/analyse', name: 'Volunteer', element: LineChart},
-
->>>>>>> Stashed changes
-
 
 ]
 
