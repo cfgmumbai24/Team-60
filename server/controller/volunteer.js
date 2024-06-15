@@ -25,11 +25,5 @@ const addBeneficiary = async (req, res) => {
     }
 }
 
+
 export default { getBeneficiaries, addBeneficiary }
-
-
-
-
-
-
-
