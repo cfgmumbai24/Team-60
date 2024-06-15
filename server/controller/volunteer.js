@@ -1,6 +1,5 @@
-import Volunteer from "../models/volunteer";
-import Goats from "../models/goats";
-import Beneficiary from "../models/beneficiary";
+import Volunteer from "../models/volunteer.js";
+import Beneficiary from "../models/beneficiary.js";
 
 const getBeneficiaries = async (req, res) => {
     const { id, password } = req.body;
@@ -16,8 +15,8 @@ const getBeneficiaries = async (req, res) => {
 
 const addBeneficiary = async (req, res) => {
     const { name, village, goats, volunteers, certificateType, certificate } = req.body;
-    const newBeneficiary = new Beneficiary({ name, village, goats, volunteers, certificateType, certificate });
     try {
+        const newBeneficiary = new Beneficiary({ name, village, goats, volunteers, certificateType, certificate });
         await newBeneficiary.save();
         res.status(201).json(newBeneficiary);
     }
