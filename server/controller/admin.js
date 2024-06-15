@@ -1,8 +1,8 @@
 import Volunteer from "../models/volunteer.js";
 
 const addvolunteer = async (req, res) => {
-    const { name, free, password, id } = req.body;
-    const newVolunteer = new Volunteer({ name, free, password, id });
+    const { name, password, uid } = req.body;
+    const newVolunteer = new Volunteer({ name, password, uid });
     try {
         await newVolunteer.save();
         res.status(201).json(newVolunteer);
