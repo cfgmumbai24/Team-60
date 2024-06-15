@@ -4,10 +4,12 @@ import pkg from 'mongoose';
 const { connect, connection } = pkg;
 import dotenv from 'dotenv';
 import { Router } from 'express';
+import cors from "cors";
 dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 connect(process.env.MONGODB_URL);

@@ -2,6 +2,10 @@ import { model, Schema } from "mongoose";
 import goats from "./goats.js";
 
 const volunteerSchema = new Schema({
+    uid: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true
