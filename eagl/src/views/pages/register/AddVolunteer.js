@@ -7,6 +7,7 @@ const AddVolunteer = () => {
     uid: '',
     password: '',
   });
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,8 +29,14 @@ const AddVolunteer = () => {
         uid: '',
         password: '',
       });
+      setSuccess(true);
     } catch (error) {
       console.error('Error adding volunteer:', error);
+    }
+    finally {
+      setTimeout(() => {
+        setSuccess(false);
+      }, 5000);
     }
   };
 
@@ -72,6 +79,11 @@ const AddVolunteer = () => {
         </div>
         <button type="submit" style={styles.submitButton}>Add Volunteer</button>
       </form>
+      {success && <p style={{
+        color: 'green',
+        textAlign: 'center',
+        marginTop: '10px',
+      }}>Volunteer added successfully!</p>}
     </div>
   );
 };
@@ -126,4 +138,3 @@ const styles = {
 };
 
 export default AddVolunteer;
- 

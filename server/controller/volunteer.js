@@ -2,14 +2,19 @@ import Volunteer from "../models/volunteer.js";
 import Beneficiary from "../models/beneficiary.js";
 
 const getBeneficiaries = async (req, res) => {
-    const { id } = req.params;
+    const { uid } = req.params;
+    console.log('uid:', uid);
     try {
-        const volunteer = Volunteer.findById(id);
-        const beneficiaries = Beneficiary.find({ volunteers: id });
-        res.status(200).json(beneficiaries);
+        // Find the volunteer by _id
+        const volunteer = await Volunteer.find({uid: uid});
+        if (!volunteer) {
+            return res.status(404).json({ message: 'Volunteer not found' });
+        }
+        
+        res.status(200).json(volunteer);
     }
     catch (error) {
-        res.status(400).json({ message: error.message })
+        res.status(400).json({ message: error.message });
     }
 }
 
