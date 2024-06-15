@@ -3,11 +3,14 @@ import Beneficiary from "../models/beneficiary.js";
 
 const getBeneficiaries = async (req, res) => {
     const { id } = req.params;
-    else {
-    const volunteer = Volunteer.findById(id);
-    const beneficiaries = Beneficiary.find({ volunteers: id });
-    res.status(200).json(beneficiaries);
-}
+    try {
+        const volunteer = Volunteer.findById(id);
+        const beneficiaries = Beneficiary.find({ volunteers: id });
+        res.status(200).json(beneficiaries);
+    }
+    catch (error) {
+        res.status(400).json({ message: error.message })
+    }
 }
 
 const addBeneficiary = async (req, res) => {
