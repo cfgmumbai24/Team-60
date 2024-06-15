@@ -28,5 +28,5 @@ app.use('/api/beneficiary', beneficiaryroutes);
 app.use('/api/volunteer', volunteerroutes);
 
 app.listen(5000, () => {
-    console.log('Server is running on http://localhost:3000');
+    console.log('Server is running on http://localhost:5000');
 });
