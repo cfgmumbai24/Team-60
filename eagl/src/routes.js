@@ -5,6 +5,7 @@ import Volunteer from './views/pages/Volunteer'
 import AddVolunteer from './views/pages/AddVolunteer'
 import VillageData from './views/pages/VillageData'
 import Analyse from './views/pages/Analyse'
+import LineChart from './LineChart'
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
@@ -109,9 +110,14 @@ const routes = [
   { path:'/admin/volunteer', name: 'Volunteer', element: Volunteer },
   { path: 'admin/volunteer/add', name: 'Volunteer', element: AddVolunteer },
   { path: 'admin/village', name: 'Volunteer', element: VillageData},
+<<<<<<< Updated upstream
   { path: '/admin/analyse', name: 'Admin', element: Analyse},
   { path: '/map', name: 'Map', element: MapComponent },
   { path: '/admin/analyse', name: 'Volunteer', element: LineChart},
+=======
+  { path: '/admin/analyse', name: 'Volunteer', element: LineChart},
+
+>>>>>>> Stashed changes
 
 
 ]
