@@ -3,14 +3,13 @@ import bodyParser from 'body-parser';
 import pkg from 'mongoose';
 const { connect, connection } = pkg;
 import dotenv from 'dotenv';
-import { Router } from 'express';
 import cors from "cors";
 dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 connect(process.env.MONGODB_URL);
 const db = connection;
@@ -28,6 +27,6 @@ app.use('/api/admin', adminroutes);
 app.use('/api/beneficiary', beneficiaryroutes);
 app.use('/api/volunteer', volunteerroutes);
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log('Server is running on http://localhost:3000');
 });
