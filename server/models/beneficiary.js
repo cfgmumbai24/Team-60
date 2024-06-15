@@ -9,6 +9,10 @@ const beneficiarySchema = new Schema({
         type: String,
         required: true
     },
+    beneficiary: {
+        type: [Schema.Types.ObjectId],
+        ref: 'Beneficiary'
+    },
     goats: {
         type: [Schema.Types.ObjectId],
         ref: 'Goat'
@@ -28,4 +32,5 @@ const beneficiarySchema = new Schema({
     },
 });
 
-export default model('Beneficiary', beneficiarySchema);
+const Beneficiary = model('Beneficiary', beneficiarySchema);
+export default Beneficiary

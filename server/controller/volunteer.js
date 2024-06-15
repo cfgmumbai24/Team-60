@@ -1,0 +1,36 @@
+import Volunteer from "../models/volunteer";
+import Goats from "../models/goats";
+import Beneficiary from "../models/beneficiary";
+
+const getBeneficiaries = async (req, res) => {
+    const { id, password } = req.body;
+    const volunteer = Volunteer.findById(id);
+    if (volunteer.password !== password) {
+        res.status(401).json({ message: "Unauthorized Access" });
+    }
+    else {
+        const beneficiaries = Beneficiary.find({ volunteers: id });
+        res.status(200).json(beneficiaries);
+    }
+}
+
+const addBeneficiary = async (req, res) => {
+    const { name, village, goats, volunteers, certificateType, certificate } = req.body;
+    const newBeneficiary = new Beneficiary({ name, village, goats, volunteers, certificateType, certificate });
+    try {
+        await newBeneficiary.save();
+        res.status(201).json(newBeneficiary);
+    }
+    catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+}
+
+export default { getBeneficiaries, addBeneficiary }
+
+
+
+
+
+
+
