@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import {
   CButton,
   CCard,
@@ -15,8 +16,11 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
-
+import { useNavigate } from 'react-router-dom'
 const Login = () => {
+  const [username, setUsername] = useState('')
+  const navigate= useNavigate();
+  const [password, setPassword] = useState('')
   return (
     <div className="bg-body-tertiary min-vh-100 d-flex flex-row align-items-center">
       <CContainer>
@@ -32,7 +36,9 @@ const Login = () => {
                       <CInputGroupText>
                         <CIcon icon={cilUser} />
                       </CInputGroupText>
-                      <CFormInput placeholder="Username" autoComplete="username" />
+                      <CFormInput placeholder="Username" autoComplete="username" onChange={(e)=>{
+                        setUsername(e.target.value)
+                      }} />
                     </CInputGroup>
                     <CInputGroup className="mb-4">
                       <CInputGroupText>
@@ -42,11 +48,35 @@ const Login = () => {
                         type="password"
                         placeholder="Password"
                         autoComplete="current-password"
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </CInputGroup>
                     <CRow>
                       <CCol xs={6}>
-                        <CButton color="primary" className="px-4">
+                        <CButton color="primary" className="px-4" onClick={()=>{
+
+                          const data = {
+                            username,
+                            password
+                          }
+                          console.log(data)
+
+                          const login= async ()=>{
+                            const response = await axios.post('http://localhost:5000/api/volunteer/login', data)
+                            // const res = await response.json()
+                            console.log(res)
+                          }
+
+                          login()
+
+                          // if(login()){
+                          //   navigate('/volunteer/dashboard')
+                          // }
+                          // else{
+                          //   console.log('Login failed')
+                          // }
+                         
+                      }}>
                           Login
                         </CButton>
                       </CCol>
@@ -68,7 +98,7 @@ const Login = () => {
                       tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <Link to="/register">
-                      <CButton color="primary" className="mt-3" active tabIndex={-1}>
+                      <CButton color="primary" className="mt-3" active tabIndex={-1} >
                         Register Now!
                       </CButton>
                     </Link>

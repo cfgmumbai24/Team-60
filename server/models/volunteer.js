@@ -28,7 +28,11 @@ const volunteerSchema = new Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    task: {
+        type: String,
+        default: 'none'
+    },
 })
 
 const Volunteer = model('Volunteer', volunteerSchema);

@@ -116,7 +116,7 @@ function VolunteerDetails() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="goats">Goats:</label>
+                  <label htmlFor="goats">Villages:</label>
                   <input
                     type="text"
                     id="goats"
@@ -141,6 +141,15 @@ function VolunteerDetails() {
                     {/* Add more beneficiary details as needed */}
                   </li>
                 ))}
+                <li  className="list-group-item">
+                    <strong>Name:</strong> Yash<br />
+                    <strong>Address:</strong>Vardodra<br />
+                    <strong>Phone:</strong> 9985751245<br />
+                    {/* Add more beneficiary details as needed */}
+                  </li>
+                  <li className="list-group-item">
+                    +
+                  </li>
               </ul>
             </div>
           </div>
