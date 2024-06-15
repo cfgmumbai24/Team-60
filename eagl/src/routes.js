@@ -58,6 +58,7 @@ const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 import MapComponent from './views/pages/Map';
+import VolunterDetails from './views/pages/VolunteerDetails'
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -113,6 +114,7 @@ const routes = [
   { path: '/admin/analyse', name: 'Analyse', element: LineChart},
   { path: '/map', name: 'Map', element: MapComponent },
   { path: '/admin/analyse', name: 'Volunteer', element: LineChart},
+  { path: '/admin/volunteer/details', name: 'Details', element: VolunterDetails}
 
 ]
 
