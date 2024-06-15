@@ -15,8 +15,8 @@ const getBeneficiaries = async (req, res) => {
 
 const addBeneficiary = async (req, res) => {
     const { name, village, goats, volunteers, certificateType, certificate } = req.body;
-    const newBeneficiary = new Beneficiary({ name, village, goats, volunteers, certificateType, certificate });
     try {
+        const newBeneficiary = new Beneficiary({ name, village, goats, volunteers, certificateType, certificate });
         await newBeneficiary.save();
         res.status(201).json(newBeneficiary);
     }
