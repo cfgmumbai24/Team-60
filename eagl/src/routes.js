@@ -56,6 +56,7 @@ const Modals = React.lazy(() => import('./views/notifications/modals/Modals'))
 const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
+import MapComponent from './views/pages/Map';
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -109,6 +110,8 @@ const routes = [
   { path: 'admin/volunteer/add', name: 'Volunteer', element: AddVolunteer },
   { path: 'admin/village', name: 'Volunteer', element: VillageData},
   { path: '/admin/analyse', name: 'Admin', element: Analyse},
+  { path: '/map', name: 'Map', element: MapComponent },
+
 
 
 ]

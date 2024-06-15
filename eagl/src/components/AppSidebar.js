@@ -27,7 +27,7 @@ const AppSidebar = () => {
   return (
     <CSidebar
       className="border-end"
-      colorScheme="dark"
+      colorScheme="light"
       position="fixed"
       unfoldable={unfoldable}
       visible={sidebarShow}
@@ -37,7 +37,8 @@ const AppSidebar = () => {
     >
       <CSidebarHeader className="border-bottom">
         {/* <CSidebarBrand to="/"> */}
-         <h1>Egal</h1>
+         {/* <h1>Egal</h1> */}
+         <img src="/eagl-logo.png" alt="" srcset="" />
           {/* <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} />
           <CIcon customClassName="sidebar-brand-narrow" icon={sygnet} height={32} /> */}
         {/* </CSidebarBrand> */}
