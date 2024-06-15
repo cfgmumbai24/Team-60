@@ -22,10 +22,12 @@ db.once('open', () => {
 import adminroutes from "./routes/admin.js";
 import beneficiaryroutes from "./routes/beneficiary.js";
 import volunteerroutes from "./routes/volunteer.js";
+import villageroutes from "./routes/village.js";
 
 app.use('/api/admin', adminroutes);
 app.use('/api/beneficiary', beneficiaryroutes);
 app.use('/api/volunteer', volunteerroutes);
+app.use('/api/village', villageroutes);
 
 app.listen(5000, () => {
     console.log('Server is running on http://localhost:5000');
