@@ -47,7 +47,7 @@ const getVolunteer = async (req, res) => {
 
 const updateVolunteer = async (req, res) => {
     const { id } = req.params;
-    const { name, village, } = req.body;
+    const { name, village } = req.body;
     if (!free) {
         res.status(409).json({ message: "Volunteer is not free" });
     }
@@ -70,7 +70,5 @@ const assignedVillageVolunteer = async (req, res) => {
         res.status(404).json({ message: error.message });
     }
 }
-
-
 export default { addvolunteer, deletevolunteer, getAllVolunteer, getVolunteer, updateVolunteer, assignedVillageVolunteer };
 

@@ -5,7 +5,10 @@ import Volunteer from './views/pages/Volunteer'
 import AddVolunteer from './views/pages/AddVolunteer'
 import VillageData from './views/pages/VillageData'
 import Analyse from './views/pages/Analyse'
+import GetBeneficiaries from './views/pages/getbenefeciary'
 import LineChart from './LineChart'
+import AddBeneficiary from './views/pages/addbeneficiary.js'
+
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
@@ -107,15 +110,16 @@ const routes = [
   // { path: '/notifications/toasts', name: 'Toasts', element: Toasts },
   // { path: '/widgets', name: 'Widgets', element: Widgets },
   { path: '/new', name: 'New', element: New },
-  { path:'/admin', name: 'Admin', element: Admin},
-  { path:'/admin/volunteer', name: 'Volunteer', element: Volunteer },
+  { path: '/admin', name: 'Admin', element: Admin },
+  { path: '/admin/volunteer', name: 'Volunteer', element: Volunteer },
   { path: 'admin/volunteer/add', name: 'Volunteer', element: AddVolunteer },
-  { path: 'admin/village', name: 'Volunteer', element: VillageData},
-  { path: '/admin/analyse', name: 'Analyse', element: LineChart},
+  { path: 'admin/village', name: 'Volunteer', element: VillageData },
+  { path: '/admin/analyse', name: 'Analyse', element: LineChart },
   { path: '/map', name: 'Map', element: MapComponent },
-  { path: '/admin/analyse', name: 'Volunteer', element: LineChart},
-  { path: '/admin/volunteer/details', name: 'Details', element: VolunterDetails}
-
+  { path: '/admin/analyse', name: 'Volunteer', element: LineChart },
+  { path: '/admin/volunteer/details', name: 'Details', element: VolunterDetails },
+  { path: '/admin/volunteer/getbeneficiaries', name: 'Volunteer', element: GetBeneficiaries },
+  { path: '/admin/volunteer/addbeneficiary', name: 'Volunteer', element: AddBeneficiary }
 ]
 
-export default routes
+export default routes;
