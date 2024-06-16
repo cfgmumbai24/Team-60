@@ -6,6 +6,7 @@ import { CSpinner, useColorModes } from '@coreui/react';
 import LineChart from './LineChart';
 import './scss/style.scss';
 import Analyse from './views/pages/Analyse';
+import Home from './views/pages/Home';
 
 // Containers
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'));
@@ -52,6 +53,7 @@ const App = () => {
           <Route exact path="/404" name="Page 404" element={<Page404 />} />
           <Route exact path="/500" name="Page 500" element={<Page500 />} />
           <Route path="*" name="Home" element={<DefaultLayout />} />
+          <Route path="/donation" name="Analyse" element={<Home />} />
           {/* <Route path="admin/Analyse" name="Analyse" element={<LineChart />} /> */}
         </Routes>
       </Suspense>
