@@ -2,15 +2,6 @@
 
 A new Flutter project.
 
-## Getting Started
+The Flutter application includes geo-tracking and geo-location features through integration, enabling real-time capture and display of latitude and longitude coordinates. Additionally, it supports photo tagging with location metadata, enhancing data context and usability for users interacting with the application.It also features a streamlined display of fetched data, emphasizing efficient UI design and state management for a seamless user experience.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ 
