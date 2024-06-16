@@ -1,4 +1,3 @@
-// src/Volunteer.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {
@@ -13,8 +12,9 @@ import {
   CircularProgress,
   Alert,
   Typography,
+  Button,
 } from '@mui/material';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Volunteer = () => {
   const [volunteers, setVolunteers] = useState([]);
@@ -37,8 +37,11 @@ const Volunteer = () => {
     };
 
     fetchVolunteers();
-
   }, []);
+
+  const handleEdit = (uid) => {
+    navigate(`/admin/volunteer/details?uid=${uid}`);
+  };
 
   if (loading) return <CircularProgress style={{ margin: '20px auto', display: 'block' }} />;
   if (error) return <Alert severity="error">{error.message}</Alert>;
@@ -63,25 +66,21 @@ const Volunteer = () => {
           <TableBody>
             {volunteers.map((volunteer) => (
               <TableRow key={volunteer._id}>
-                <TableCell>{volunteer._id}</TableCell>
+                <TableCell>{volunteer.uid}</TableCell>
                 <TableCell>{volunteer.name}</TableCell>
                 <TableCell>
-                  {/* {volunteer.goats.map((goat) => (
-                    <div key={goat._id}>{goat.name}</div>
-                  ))} */}
                   {volunteer.goats.length > 0 ? volunteer.goats.map((goat) => (
-                    <div key={goat._id}>{goat.length}</div>
+                    <div key={goat._id}>{goat.name}</div>
                   )) : 'No Beneficiary assigned'}
                 </TableCell>
-                {/* <TableCell>{volunteer.villages.join(', ')}</TableCell> */}
                 <TableCell>
                   {volunteer.villages.length > 0 ? volunteer.villages.join(', ') : 'No villages assigned'}
                 </TableCell>
                 <TableCell>{volunteer.free ? 'Yes' : 'No'}</TableCell>
-                <TableCell onClick={() => {
-                  navigate(`/admin/volunteer/details?uid=${volunteer.uid}`);
-                }}>
-                  <button>Edit</button>
+                <TableCell>
+                  <Button variant="contained" color="primary" onClick={() => handleEdit(volunteer.uid)}>
+                    Edit
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}

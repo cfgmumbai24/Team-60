@@ -36,12 +36,6 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'Village Data',
-    to: '/village',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
-  },
-  {
-    component: CNavItem,
     name: "Benificiary List",
     to: '/beneficiarydetails',
     icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,

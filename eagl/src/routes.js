@@ -9,6 +9,7 @@ import GetBeneficiaries from './views/pages/getbenefeciary'
 import LineChart from './LineChart'
 import AddBeneficiary from './views/pages/addbeneficiary.js'
 import Beneficiarydetails from './views/pages/beneficiarydetails.js'
+import AddTasks from './views/pages/addtask.js'
 
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
@@ -119,6 +120,7 @@ const routes = [
   { path: '/map', name: 'Map', element: MapComponent },
   { path: '/volunteerdetails', name: 'Details', element: VolunterDetails },
   { path: '/beneficiarydetails', name: 'Volunteer', element: Beneficiarydetails },
+  { path: '/addtask', name: 'Add Task', element: AddTasks },
 ]
 
 export default routes;

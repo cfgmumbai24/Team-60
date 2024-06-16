@@ -14,3 +14,6 @@ const taskSchema = new Schema({
         ref: 'Volunteer'
     },
 })
+
+const Task = model('Task', taskSchema)
+export default Task
