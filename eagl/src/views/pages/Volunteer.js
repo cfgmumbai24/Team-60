@@ -21,12 +21,12 @@ const Volunteer = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchVolunteers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/admin/getAllVolunteers');
+        const response = await axios.get('https://cfg-backend.vercel.app/getVolunteers');
         setVolunteers(response.data);
         console.log('Volunteers:', response.data);
         setLoading(false);
@@ -78,7 +78,7 @@ const Volunteer = () => {
                   {volunteer.villages.length > 0 ? volunteer.villages.join(', ') : 'No villages assigned'}
                 </TableCell>
                 <TableCell>{volunteer.free ? 'Yes' : 'No'}</TableCell>
-                <TableCell onClick={()=>{
+                <TableCell onClick={() => {
                   navigate(`/admin/volunteer/details?uid=${volunteer.uid}`);
                 }}>
                   <button>Edit</button>
