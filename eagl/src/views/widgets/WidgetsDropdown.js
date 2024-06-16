@@ -50,7 +50,7 @@ const WidgetsDropdown = (props) => {
               </span>
             </>
           }
-          title="Users"
+          title="Beneficiaries Joined"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="text-white p-0">
@@ -134,13 +134,13 @@ const WidgetsDropdown = (props) => {
           color="info"
           value={
             <>
-              $6.200{' '}
+              Rs6.200{' '}
               <span className="fs-6 fw-normal">
                 (40.9% <CIcon icon={cilArrowTop} />)
               </span>
             </>
           }
-          title="Income"
+          title="Income Generated"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="text-white p-0">
@@ -229,7 +229,7 @@ const WidgetsDropdown = (props) => {
               </span>
             </>
           }
-          title="Conversion Rate"
+          title="Growth Rate of Goats"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="text-white p-0">
@@ -301,7 +301,7 @@ const WidgetsDropdown = (props) => {
               </span>
             </>
           }
-          title="Sessions"
+          title="Vaccination"
           action={
             <CDropdown alignment="end">
               <CDropdownToggle color="transparent" caret={false} className="text-white p-0">
