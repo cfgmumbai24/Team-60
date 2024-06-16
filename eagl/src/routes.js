@@ -9,7 +9,6 @@ import GetBeneficiaries from './views/pages/getbenefeciary'
 import LineChart from './LineChart'
 import AddBeneficiary from './views/pages/addbeneficiary.js'
 import Beneficiarydetails from './views/pages/beneficiarydetails.js'
-import AddTasks from './views/pages/addtask.js'
 
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
