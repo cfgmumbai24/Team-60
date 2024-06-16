@@ -34,17 +34,19 @@ import Volunteer from './models/volunteer.js';
 
 app.post('/api/beni', async (req, res) => {
     const { name, village, goats, certificate, timestamp, longitude, latitude } = req.body;
+    timestamp = toString(timestamp);
     const beneficiary = new Beneficiary({
         name,
         village,
         goats,
         certificate,
-        timestamp: toString(timestamp),
+        timestamp,
         longitude,
         latitude,
     });
 
     try {
+        console.log(timeStamp)
         await beneficiary.save();
         res.status(200).json(beneficiary);
     } catch (error) {

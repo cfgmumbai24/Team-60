@@ -20,7 +20,7 @@ const AddVolunteer = () => {
     e.preventDefault();
     console.log('Form data:', formData);
     try {
-      const response = await axios.post('http://localhost:5000/api/admin/addvolunteer', formData);
+      const response = await axios.post('https://cfg-backend.vercel.app/addVolunteer', formData);
       console.log('Volunteer added successfully:', response.data);
       // Reset form
       setFormData({
@@ -125,5 +125,4 @@ const styles = {
   },
 };
 
-export default AddVolunteer;
- 
+export default AddVolunteer;

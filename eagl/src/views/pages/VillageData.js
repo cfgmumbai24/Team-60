@@ -8,7 +8,7 @@ function VillageData() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/village/getVillages');
+        const response = await axios.get('https://cfg-backend.vercel.app/village/getVillages');
         setVillageData(response.data);
         setVillageDataLoading(false);
       } catch (error) {
