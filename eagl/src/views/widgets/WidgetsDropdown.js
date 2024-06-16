@@ -134,7 +134,7 @@ const WidgetsDropdown = (props) => {
           color="info"
           value={
             <>
-              Rs6.200{' '}
+              Rs6 .200{' '}
               <span className="fs-6 fw-normal">
                 (40.9% <CIcon icon={cilArrowTop} />)
               </span>

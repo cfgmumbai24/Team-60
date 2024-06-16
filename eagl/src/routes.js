@@ -118,7 +118,7 @@ const routes = [
   { path: '/village', name: 'Volunteer', element: VillageData },
   { path: '/analyse', name: 'Analyse', element: LineChart },
   { path: '/map', name: 'Map', element: MapComponent },
-  { path: '/volunteerdetails', name: 'Details', element: VolunterDetails },
+  { path: 'admin/volunteer/details', name: 'Details', element: VolunterDetails },
   { path: '/beneficiarydetails', name: 'Volunteer', element: Beneficiarydetails },
   { path: '/addtask', name: 'Add Task', element: AddTasks },
 ]
