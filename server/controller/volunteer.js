@@ -1,16 +1,10 @@
 import Volunteer from "../models/volunteer.js";
 import Beneficiary from "../models/beneficiary.js";
 
-const getBeneficiaries = async (req, res) => {
-    const { uid } = req.params;
-    console.log('uid:', uid);
+const getAllBeneficiaries = async (req, res) => {
     try {
-        const volunteer = await Volunteer.find({ uid: uid });
-        if (!volunteer) {
-            return res.status(404).json({ message: 'Volunteer not found' });
-        }
-
-        res.status(200).json(volunteer);
+        const beneficiaries = await Beneficiary.find();
+        res.status(200).json(beneficiaries);
     }
     catch (error) {
         res.status(400).json({ message: error.message });
@@ -22,7 +16,7 @@ const addBeneficiary = async (req, res) => {
     const { name, village, certificateType, certificate } = req.body;
     try {
         const volunteer = await Volunteer.findById(id);
-        const newBeneficiary = new Beneficiary({ name, village, goats, volunteers, certificateType, certificate });
+        const newBeneficiary = new Beneficiary({ name, village, goats, volunteer, certificateType, certificate });
         await newBeneficiary.save();
         res.status(201).json(newBeneficiary);
         if (!volunteer) {
@@ -39,4 +33,4 @@ const addBeneficiary = async (req, res) => {
 }
 
 
-export default { getBeneficiaries, addBeneficiary }
+export default { getAllBeneficiaries, addBeneficiary }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import axios from "axios"
 
 const GetBeneficiary = () => {
     const [beneficiaries, setBeneficiaries] = useState([]);
@@ -8,37 +9,52 @@ const GetBeneficiary = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Hardcoded data simulating fetched beneficiary data
-        const hardcodedBeneficiaries = [
-            {
-                _id: '1',
-                name: 'John Doe',
-                village: 'Village A',
-                goats: [1, 2],
-                volunteers: [1],
-                certificateType: 'AadharCard',
-            },
-            {
-                _id: '2',
-                name: 'Jane Smith',
-                village: 'Village B',
-                goats: [1],
-                volunteers: [1, 2],
-                certificateType: 'RationCard',
-            },
-            {
-                _id: '3',
-                name: 'Sam Wilson',
-                village: 'Village C',
-                goats: [],
-                volunteers: [],
-                certificateType: 'DomicleCerticiate',
-            },
-        ];
+        const fetchBeneficiaries = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/api/volunteer/getAllBeneficiaries');
+                console.log(response);
+                setBeneficiaries(response.data);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching beneficiaries:', error);
+                setLoading(false);
+            }
+        };
 
-        setBeneficiaries(hardcodedBeneficiaries);
-        setLoading(false);
-    }, []);
+        fetchBeneficiaries();
+    }, [])
+
+    // useEffect(() => {
+    //     const hardcodedBeneficiaries = [
+    //         {
+    //             _id: '1',
+    //             name: 'John Doe',
+    //             village: 'Village A',
+    //             goats: [1, 2],
+    //             volunteers: [1],
+    //             certificateType: 'AadharCard',
+    //         },
+    //         {
+    //             _id: '2',
+    //             name: 'Jane Smith',
+    //             village: 'Village B',
+    //             goats: [1],
+    //             volunteers: [1, 2],
+    //             certificateType: 'RationCard',
+    //         },
+    //         {
+    //             _id: '3',
+    //             name: 'Sam Wilson',
+    //             village: 'Village C',
+    //             goats: [],
+    //             volunteers: [],
+    //             certificateType: 'DomicleCerticiate',
+    //         },
+    //     ];
+
+    //     setBeneficiaries(hardcodedBeneficiaries);
+    //     setLoading(false);
+    // }, []);
 
     if (loading) {
         return <div>Loading...</div>;

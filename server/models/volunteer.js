@@ -1,5 +1,6 @@
 import { model, Schema } from "mongoose";
 import goats from "./goats.js";
+import Beneficiary from "./beneficiary.js";
 
 const volunteerSchema = new Schema({
     uid: {
@@ -9,10 +10,6 @@ const volunteerSchema = new Schema({
     name: {
         type: String,
         required: true
-    },
-    volunteers: {
-        type: [Schema.Types.ObjectId],
-        ref: 'Volunteer'
     },
     goats: {
         type: [Schema.Types.ObjectId],
@@ -29,10 +26,10 @@ const volunteerSchema = new Schema({
         type: String,
         required: true
     },
-    task: {
-        type: String,
-        default: 'none'
-    },
+    Beneficiary: {
+        type: [Schema.Types.ObjectId],
+        ref: 'Beneficiary'
+    }
 })
 
 const Volunteer = model('Volunteer', volunteerSchema);

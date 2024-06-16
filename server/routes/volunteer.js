@@ -4,7 +4,7 @@ import login from '../controller/login.js';
 
 const router = Router();
 
-router.get('/getbeneficiaries/:uid', volunteer.getBeneficiaries);
+router.get('/getAllbeneficiaries/', volunteer.getAllBeneficiaries);
 router.post('/addbeneficiary', volunteer.addBeneficiary);
 router.post('/login', login);
 
