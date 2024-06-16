@@ -37,7 +37,7 @@ const getAllVolunteer = async (req, res) => {
 const getVolunteer = async (req, res) => {
     const { id } = req.params;
     try {
-        const volunteer = await Volunteer.findById(id);
+        const volunteer = await Volunteer.find({id:id});
         res.status(200).json(volunteer);
     }
     catch (error) {

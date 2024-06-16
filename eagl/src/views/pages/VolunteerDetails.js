@@ -4,7 +4,7 @@ import axios from 'axios';
 function VolunteerDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const param1 = urlParams.get('uid');
-  
+
   const [volunteer, setVolunteer] = useState({
     name: '',
     password: '',
@@ -25,9 +25,9 @@ function VolunteerDetails() {
   useEffect(() => {
     const fetchVolunteerAndBeneficiaries = async () => {
       try {
-        const volunteerResponse = await axios.get(`http://localhost:5000/api/volunteer/getbeneficiaries/${param1}`);
+        const volunteerResponse = await axios.get(`http://localhost:5000/getVolunteer/${param1}`);
         if (volunteerResponse.data.length > 0) {
-          setVolunteer(volunteerResponse.data[0]); 
+          setVolunteer(volunteerResponse.data[0]);
           setName(volunteerResponse.data[0].name);
           setPassword(volunteerResponse.data[0].password);
           setFree(volunteerResponse.data[0].free);
@@ -52,7 +52,7 @@ function VolunteerDetails() {
   // Function to handle form submission for updating volunteer
   const handleUpdate = async (event) => {
     event.preventDefault();
-    
+
     try {
       const updatedVolunteer = {
         ...volunteer,
@@ -68,6 +68,7 @@ function VolunteerDetails() {
       // Optionally update local state or show success message
     } catch (error) {
       console.error('Error updating volunteer:', error);
+      console.log(error)
       setError('Failed to update volunteer');
     }
   };
@@ -91,7 +92,7 @@ function VolunteerDetails() {
                     className="form-control"
                   />
                 </div>
-                
+
                 <div className="form-group">
                   <label htmlFor="password">Password:</label>
                   <input
@@ -102,7 +103,7 @@ function VolunteerDetails() {
                     className="form-control"
                   />
                 </div>
-                
+
                 <div className="form-group">
                   <label>
                     <input
@@ -114,7 +115,7 @@ function VolunteerDetails() {
                     Free
                   </label>
                 </div>
-                
+
                 <div className="form-group">
                   <label htmlFor="goats">Villages:</label>
                   <input
@@ -125,7 +126,7 @@ function VolunteerDetails() {
                     className="form-control"
                   />
                 </div>
-                
+
                 <button type="submit" className="btn btn-primary">Update</button>
               </form>
             </div>

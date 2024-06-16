@@ -20,7 +20,7 @@ const _nav = [
     component: CNavItem,
     name: 'Analyse',
     to: '/dashboard',
-    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
