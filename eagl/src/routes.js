@@ -120,6 +120,8 @@ const routes = [
   { path: '/admin/volunteer/details', name: 'Details', element: VolunterDetails },
   { path: '/admin/volunteer/getbeneficiaries', name: 'Volunteer', element: GetBeneficiaries },
   { path: '/admin/volunteer/addbeneficiary', name: 'Volunteer', element: AddBeneficiary }
+  
+
 ]
 
 export default routes;
