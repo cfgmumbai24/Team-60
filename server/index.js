@@ -29,6 +29,48 @@ app.use('/api/beneficiary', beneficiaryroutes);
 app.use('/api/volunteer', volunteerroutes);
 app.use('/api/village', villageroutes);
 
+import Beneficiary from './models/beneficiary.js';
+
+app.post('/api/beni', async (req, res) => {
+    const { name, village, goats, certificate, timestamp, longitude, latitude } = req.body;
+    const beneficiary = new Beneficiary({
+        name,
+        village,
+        goats,
+        certificate,
+        timestamp: toString(timestamp),
+        longitude,
+        latitude,
+    });
+
+    try {
+        await beneficiary.save();
+        res.status(200).json(beneficiary);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+app.get('/api/beni', async (req, res) => {
+    try {
+        const beneficiaries = await Beneficiary.find();
+        res.status(200).json(beneficiaries);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
+app.get('/longitudeLatitude', async (req, res) => {
+    try {
+        const beneficiaries = await Beneficiary.find();
+        res.status(200).json(beneficiaries);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
 app.listen(5000, () => {
     console.log('Server is running on http://localhost:5000');
 });

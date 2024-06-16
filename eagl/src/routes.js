@@ -8,6 +8,7 @@ import Analyse from './views/pages/Analyse'
 import GetBeneficiaries from './views/pages/getbenefeciary'
 import LineChart from './LineChart'
 import AddBeneficiary from './views/pages/addbeneficiary.js'
+import Beneficiarydetails from './views/pages/beneficiarydetails.js'
 
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
@@ -111,15 +112,13 @@ const routes = [
   // { path: '/widgets', name: 'Widgets', element: Widgets },
   { path: '/new', name: 'New', element: New },
   { path: '/admin', name: 'Admin', element: Admin },
-  { path: '/admin/volunteer', name: 'Volunteer', element: Volunteer },
-  { path: 'admin/volunteer/add', name: 'Volunteer', element: AddVolunteer },
-  { path: 'admin/village', name: 'Volunteer', element: VillageData },
-  { path: '/admin/analyse', name: 'Analyse', element: LineChart },
+  { path: '/volunteerlist', name: 'Volunteer', element: Volunteer },
+  { path: '/volunteeradd', name: 'Volunteer', element: AddVolunteer },
+  { path: '/village', name: 'Volunteer', element: VillageData },
+  { path: '/analyse', name: 'Analyse', element: LineChart },
   { path: '/map', name: 'Map', element: MapComponent },
-  { path: '/admin/analyse', name: 'Volunteer', element: LineChart },
-  { path: '/admin/volunteer/details', name: 'Details', element: VolunterDetails },
-  { path: '/admin/volunteer/getbeneficiaries', name: 'Volunteer', element: GetBeneficiaries },
-  { path: '/admin/volunteer/addbeneficiary', name: 'Volunteer', element: AddBeneficiary }
+  { path: '/volunteerdetails', name: 'Details', element: VolunterDetails },
+  { path: '/beneficiarydetails', name: 'Volunteer', element: Beneficiarydetails },
 ]
 
 export default routes;

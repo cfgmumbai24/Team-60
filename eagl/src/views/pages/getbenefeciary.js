@@ -75,7 +75,6 @@ const GetBeneficiary = () => {
                             <TableCell>No of Goats</TableCell>
                             <TableCell>No of Volunteers</TableCell>
                             <TableCell>Certificate Type</TableCell>
-                            <TableCell>Actions</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -87,11 +86,6 @@ const GetBeneficiary = () => {
                                 <TableCell>{beneficiary.goats.length}</TableCell>
                                 <TableCell>{beneficiary.volunteers.length}</TableCell>
                                 <TableCell>{beneficiary.certificateType}</TableCell>
-                                <TableCell>
-                                    <Button variant="contained" color="primary" onClick={() => navigate(`/admin/beneficiary/details?uid=${beneficiary._id}`)}>
-                                        Edit
-                                    </Button>
-                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

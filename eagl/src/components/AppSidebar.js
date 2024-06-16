@@ -19,7 +19,7 @@ import { sygnet } from 'src/assets/brand/sygnet'
 // sidebar nav config
 import navigation from '../_nav'
 
-const AppSidebar = ({isVol}) => {
+const AppSidebar = ({ isVol }) => {
   const dispatch = useDispatch()
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
   const sidebarShow = useSelector((state) => state.sidebarShow)
@@ -37,9 +37,9 @@ const AppSidebar = ({isVol}) => {
     >
       <CSidebarHeader className="border-bottom">
         {/* <CSidebarBrand to="/"> */}
-         {/* <h1>Egal</h1> */}
-         <img src="/eagl-logo.png" alt="" srcset="" />
-          {/* <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} />
+        {/* <h1>Egal</h1> */}
+        <img src="/eagl-logo.png" alt="" srcset="" />
+        {/* <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} />
           <CIcon customClassName="sidebar-brand-narrow" icon={sygnet} height={32} /> */}
         {/* </CSidebarBrand> */}
         <CCloseButton

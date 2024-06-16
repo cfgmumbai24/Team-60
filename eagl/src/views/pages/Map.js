@@ -3,12 +3,12 @@ import MapComponent from './MapComponent';
 
 const Map = () => {
   const personCoordinates = {
-    lat: 51.505,
-    lng: -0.09,
+    lat: 18.1853,
+    lng: 76.0420,
   };
   return (
     <div className="Map">
-      <h1>Person's Location</h1>
+      <h1>Volunteer's Location</h1>
       <MapComponent coordinates={personCoordinates} />
     </div>
   );
