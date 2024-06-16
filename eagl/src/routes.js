@@ -119,7 +119,6 @@ const routes = [
   { path: '/map', name: 'Map', element: MapComponent },
   { path: 'admin/volunteer/details', name: 'Details', element: VolunterDetails },
   { path: '/beneficiarydetails', name: 'Volunteer', element: Beneficiarydetails },
-  { path: '/addtask', name: 'Add Task', element: AddTasks },
 ]
 
 export default routes;
